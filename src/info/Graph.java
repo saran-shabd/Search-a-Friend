@@ -1,8 +1,9 @@
 package info;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Graph {
+public class Graph implements Serializable {
 	
 	private int people;
 	private LinkedList<LinkedList<String>> relations;

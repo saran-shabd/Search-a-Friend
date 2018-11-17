@@ -23,6 +23,7 @@ public class CreatePerson {
         }
 
         Main.graph.addPerson(personName.getText());
+        new Home().updateFile();
 
         Alert personCreate = new Alert(Alert.AlertType.INFORMATION);
         personCreate.setContentText("Person created successfully");

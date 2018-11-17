@@ -26,6 +26,7 @@ public class CreateFriend {
         }
 
         Main.graph.addFriend(personName.getText(), friendName.getText());
+        new Home().updateFile();
 
         Alert friendsCreated = new Alert(Alert.AlertType.INFORMATION);
         friendsCreated.setContentText("Friends created successfully");

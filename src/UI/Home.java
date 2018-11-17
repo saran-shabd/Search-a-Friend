@@ -7,7 +7,9 @@ import javafx.scene.control.Alert;
 
 import main.*;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class Home {
 
@@ -22,6 +24,17 @@ public class Home {
             Parent newPane = FXMLLoader.load(getClass().getResource(fxmlFileName));
             Main.primaryStage.getScene().setRoot(newPane);
             Main.primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void updateFile() {
+        try {
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("info.bin"));
+            os.writeObject(Main.graph);
+            os.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
